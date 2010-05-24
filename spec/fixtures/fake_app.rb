@@ -114,6 +114,10 @@ module Rack
         "Hello, PUT: #{params.inspect}"
       end
 
+      patch "/" do
+        "Hello, PATCH: #{params.inspect}"
+      end
+
       delete "/" do
         "Hello, DELETE: #{params.inspect}"
       end

@@ -433,6 +433,19 @@ describe Rack::Test::Session do
     end
   end
 
+  describe "#patch" do
+    it_should_behave_like "any #verb methods"
+
+    def verb
+      "patch"
+    end
+
+    it "accepts a body" do
+      patch "/", "Lobsterlicious!"
+      last_request.body.read.should == "Lobsterlicious!"
+    end
+  end
+
   describe "#delete" do
     it_should_behave_like "any #verb methods"
 
